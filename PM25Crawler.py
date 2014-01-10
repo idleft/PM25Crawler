@@ -85,8 +85,3 @@ def PM25Crawler():
 
 if __name__=="__main__":
 	PM25Crawler()
-	# cityURL = loadCityURL()
-	# print cityURL
-	# data = urllib2.urlopen(webSiteURL).read()
-	# cityURL = getCityURL(data)
-	#print >> cityFile, str(cityURL).encode('utf8')
