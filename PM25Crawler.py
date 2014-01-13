@@ -9,7 +9,7 @@ from ast import literal_eval
 
 webSiteURL = "http://www.cnpm25.cn"
 # cityList and Detail Read from Internet 1 for true, 0 for false
-FORCEUPDATE = 0
+FORCEUPDATE = 1
 cityListMode = 1
 # Daily City PM2.5 Save
 cityDailySave = 1
@@ -63,7 +63,7 @@ def loadCityURLPost():
 def dumpPostPM25(cityPM25):
 	postPM25 = []
 	for iCity in cityPM25:
-		postPM25.append(iCity[2:])
+		postPM25.append(iCity[1:]) # PostPM25 content: [citypostcode, pm25Value]
 	pickle.dump(postPM25,open('PM25Current.p','wb'))
 	# print postPM25
 
@@ -85,3 +85,5 @@ def PM25Crawler():
 
 if __name__=="__main__":
 	PM25Crawler()
+	# cityPost=pickle.load(open('PM25Current.p','rb'))
+	# print cityPost
